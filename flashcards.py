@@ -36,7 +36,7 @@ if __name__ == '__main__':
     random.shuffle(wordlist)
     available_words = wordlist[:20]
     num_mastered_words = 0
-    print("available_words %s" %(str(available_words)))
+    print("Initial word list (grows as you master more words) %s" %(str(available_words)))
     while True:
       if sum([int(is_mastered(word, correct, incorrect)) for word in available_words]) > num_mastered_words:
         print("New word unlocked!")

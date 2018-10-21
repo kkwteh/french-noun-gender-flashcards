@@ -8,4 +8,4 @@ To use this program, download this repository and run: `python flashcards.py` in
 
 The record of correct and incorrect guesses are recorded in `flashcardrecord.csv` when you exit the script. The record is loaded each time the script is run.
 
-Words appear less often when you have exhibited mastery of them.
+Starts testing an initial word list of 20 words which grows as words are mastered. Words appear less often as you exhibit mastery of them.
