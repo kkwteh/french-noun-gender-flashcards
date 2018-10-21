@@ -35,9 +35,12 @@ if __name__ == '__main__':
     wordlist = list(WORDDICT.keys())
     random.shuffle(wordlist)
     available_words = wordlist[:20]
+    num_mastered_words = 0
+    print("available_words %s" %(str(available_words)))
     while True:
-      foo = input("available_words %s" %(str(available_words)))
-      num_mastered_words = sum([int(is_mastered(word)) for word in available_words])
+      if sum([int(is_mastered(word, correct, incorrect)) for word in available_words]) > num_mastered_words:
+        print("New word unlocked!")
+      num_mastered_words = sum([int(is_mastered(word, correct, incorrect)) for word in available_words])
       available_words = wordlist[:(20 + num_mastered_words)]
       word = random.choice(available_words)
       # Downsample words that have been answered correctly many times already.
